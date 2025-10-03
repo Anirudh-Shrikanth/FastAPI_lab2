@@ -20,8 +20,10 @@ This project is a mini machine learning API built with FastAPI that can predict 
 
 4. main.py
 * This is the FastAPI app. It defines endpoints you can call:
-/	            GET	    Health check → returns {"status":"healthy"}
-/predict	    POST	Accepts wine features as input and returns the predicted class (0,1,2)
-/info	        GET	    Returns API info like version, author, available endpoints
-/features	    GET	    Returns a list of all required input features
-/reload-model	POST	Reloads the model from disk if it’s updated
+* /	            GET	    Health check → returns {"status":"healthy"}
+* /predict	    POST	Accepts wine features as input and returns the predicted class (0,1,2)
+* /info	        GET	    Returns API info like version, author, available endpoints
+* /features	    GET	    Returns a list of all required input features
+* /reload-model	POST	Reloads the model from disk if it’s updated
+
+5. To serve the trained model as an API, run "uvicorn main:app --reload --app-dir src" from the parent directory of src and then use port 8000 on localhost
